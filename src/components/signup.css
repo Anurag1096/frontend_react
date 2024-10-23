@@ -1,0 +1,8 @@
+.signup-main{
+	background-color: teal;
+	width:700px;
+	height:600px;
+}
+input[type="radio"]{
+	cursor: pointer;
+}
