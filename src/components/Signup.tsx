@@ -63,15 +63,19 @@ axios.post("http://127.0.0.1:8000/signup/",formData)
         value={userFields.name}
         onChange={handleUserData}
       />
-      
+      <div>
+
       <input 
         type="password"
         name="password"
         value={userFields.password}
         onChange={handleUserData}
       />
+      </div>
       
       <div>
+        <div>
+
         <input 
           type="radio"
           name="gender"
@@ -80,7 +84,6 @@ axios.post("http://127.0.0.1:8000/signup/",formData)
           checked={userFields.gender === "Male"}
         />
         Male
-
         <input 
           type="radio"
           name="gender"
@@ -98,7 +101,10 @@ axios.post("http://127.0.0.1:8000/signup/",formData)
           checked={userFields.gender === "Other"}
         />
         Other
+        </div>
+
       </div>
+<div>
 
       <label>
         User Name
@@ -109,6 +115,7 @@ axios.post("http://127.0.0.1:8000/signup/",formData)
           onChange={handleUserData}
         />
       </label>
+</div>
 
       <label>
         Image
@@ -118,8 +125,10 @@ axios.post("http://127.0.0.1:8000/signup/",formData)
           onChange={handleUserData}
         />
       </label>
+      <div>
 
       <button onClick={submitHandle}>Submit</button>
+      </div>
     </div>
   )
 );
