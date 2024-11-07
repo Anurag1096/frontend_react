@@ -45,6 +45,7 @@ axios.post("http://127.0.0.1:8000/signup/",formData)
 .then((res)=>{
   setLoading(false) 
   console.log(res)
+  localStorage.setItem("response", res.data)
 
 })
 .catch((error)=>{
