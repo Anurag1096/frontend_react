@@ -1,9 +1,124 @@
 .login-main{
     padding:10px;
+    font-family:"Poppins", sans-serif;
+    font-weight:500;
+    font-style:normal;
+}
+.login-logo{
+    display:flex;
+    align-items:center;
+}
+.input-container{
+    max-width:400px;
+}
+.input-feilds{
+    border:1px solid #D9D9D9;
+    border-radius:10px;
+    padding: 4px;
+    margin-bottom:40px;
+    width:100%;
+    font-size:14px;
+    height:60px;
+}
+.login-green{
+     text-decoration:none;
+    font-size:18px;
+    margin-left:2px;
+    color:#20DC49;
+}
+.login-authButton-wrapper{
+ display:flex;
+ justify-content:center;
+ margin-bottom: 30px;
+}
+.login-authButton{
+    width:126px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:#FFFFFF;
+    border:2px solid #DEDEDE;
+    border-radius:4px;
+}
+.login-authButton:hover{
+    cursor:pointer;
+   
+    border:2px solid #20DC49;
+    margin-top:1px;
+}
+.login-Header{
+    text-align:center;
+    font-weight:400;
+}
+.login-recv{
 
+    display:flex;
+    justify-content:space-between;
+    align-items:top;
+}
+.login-loginbtn{
+    width:100%;
+    border-radius:8px;
+    border:1px solid #5A5A5A;
+    margin-top:20px;
+    cursor:pointer;
+    background:transparent;
+    height:45px;
+    font-family:"Poppins";
+    font-weight:300;
+    font-size:18px;
+    font-style:normal;
 }
 
-.input-feilds{
-    border-radius:8px;
-    padding: 4px;
+
+.login-dissable{
+    width:50px;
+    position:relative;
+    height:22px;
+    border:2px solid #ECECEC;
+    border-radius:12px;
+    background-color:#ECECEC;
+}
+.login-active{
+    width:50px;
+    position:relative;
+    border:2px solid #ECECEC;
+    height:22px;
+    border-radius:12px;
+    background-color:#20DC49;
+}
+.login-circle-2{
+    border-radius:50%;
+    background-color:white;
+    height:20px;
+    positon:absolute;
+    left:1px;
+    transition:left 1s ease-in;
+    cursor:pointer;
+    width:20px;
+}
+.login-circle-1{
+    border-radius:50%;
+    background-color:white;
+    height:20px;
+    position:absolute;
+    right:1px;
+    transition:right 1s ease-out;
+    cursor:pointer; 
+    width:20px;
+}
+.login-or-text{
+    position:relative;
+    margin: 40px 0;
+}
+.login-body{
+    display:flex;
+   
+    justify-content:center;
+}
+.login-nav{
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
 }
