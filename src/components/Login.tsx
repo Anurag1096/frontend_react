@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./login.css";
+import { useDispatch,useSelector } from "react-redux";
+import { loginUser } from "../features/authSlice";
 export const Login = () => {
   const [myState, setState] = useState({
     userName: "",
     password: "",
   });
   const [active,setActive]=useState<boolean>(false)
+  const {loading,user,error}= useSelector((state)=> state.auth)
+  const dispatch = useDispatch()
   const handleStateChange = (e: any) => {
     const { name, value } = e.target;
      
@@ -20,6 +24,10 @@ const handleActive=()=>{
 	setActive(!active)
 }
 
+const handleLogin=(e: React.FormEvent)=>{
+  e.preventDefault();
+  dispatch(loginUser(myState))
+}
 
   return (
     <>
@@ -81,7 +89,7 @@ const handleActive=()=>{
                 }}
               ></div>
             </div>
-
+             <form onSubmit={handleLogin}>
             <div className="input-container">
               <input
                 className="input-feilds"
@@ -115,8 +123,9 @@ const handleActive=()=>{
 			</div>
 
 			<div>
-				<button className="login-loginbtn">Log in</button>
+				<button type="submit" className="login-loginbtn">Log in</button>
 			</div>
+      </form>
             {/* End */}
           </div>
         </div>

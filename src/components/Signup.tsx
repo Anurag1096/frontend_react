@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+
+import { useDispatch,useSelector } from "react-redux";
 import "./signup.css";
+import { signupUser } from "../features/authSlice";
 type UserFields = {
   name: string;
   gender: string;
@@ -11,7 +14,7 @@ type UserFields = {
 };
 
 export const Signup = () => {
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [loading, setLoading] = useState<boolean>(false);
   const [userFields, setFields] = useState<UserFields>({
     name: "",
     gender: "",
@@ -19,6 +22,8 @@ export const Signup = () => {
     userName: "",
     userImage: undefined,
   });
+  const dispatch =useDispatch();
+  const {loading,error,user}= useSelector((state)=> state.auth)
 
   const handleUserData = (e: any) => {
     const { name, value, type } = e.target;
@@ -38,25 +43,14 @@ export const Signup = () => {
   const submitHandle = () => {
     console.log(userFields);
     // sets the loading to true
-    setLoading((prevState) => !prevState);
+   
     const formData = new FormData();
     formData.append("name", userFields.name);
     formData.append("gender", userFields.gender);
     formData.append("userImage", userFields.userImage);
     formData.append("username", userFields.userName);
     formData.append("password", userFields.password);
-
-    axios
-      .post("http://127.0.0.1:8000/signup/", formData)
-      .then((res) => {
-        setLoading(false);
-        console.log(res);
-        localStorage.setItem("response", res.data);
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.log(error);
-      });
+    dispatch(signupUser(formData))
   };
 
   return loading ? (
