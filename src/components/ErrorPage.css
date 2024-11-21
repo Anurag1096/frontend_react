@@ -1,0 +1,60 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .error-content {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .h1a {
+    font-size: 6rem;
+    color: #dc3545;
+  }
+  
+  .h2a {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  .pa {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #6c757d;
+  }
+  
+  .error-actions .btn-home,
+  .error-actions .btn-retry {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-home {
+    background-color: #007bff;
+  }
+  
+  .btn-home:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-retry {
+    background-color: #28a745;
+  }
+  
+  .btn-retry:hover {
+    background-color: #1e7e34;
+  }
+  
